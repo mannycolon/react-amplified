@@ -86,3 +86,50 @@ Now, the authentication service has been deployed and you can start using it. To
 ```bash
 amplify console
 ```
+
+- Create login UI
+
+1. Import the withAuthenticator component:
+
+```js
+import { withAuthenticator } from '@aws-amplify/ui-react'
+```
+
+1. Change the default export to be the withAuthenticator wrapping the main component:
+
+```js
+export default withAuthenticator(App)
+```
+
+1. Run the app to see the new Authentication flow protecting the app:
+
+```bash
+npm start
+```
+
+Now you should see the app load with an authentication flow allowing users to sign up and sign in.
+
+In this example, you used the Amplify React UI library and the withAuthenticator component to quickly get up and running with a real-world authentication flow.
+
+You can also customize this component to add or remove fields, update styling, or other configurations.
+
+In addition to the withAuthenticator you can build custom authentication flows using the Auth class.
+
+Auth has over 30 methods including signUp, signIn, forgotPasword, and signOut that allow you full control over all aspects of the user authentication flow. Check out the complete API [here](https://aws-amplify.github.io/amplify-js/api/classes/authclass.html)
+
+- Add hosting to your app
+
+From the root of your project, run the following command and select the bolded options.
+
+```bash
+amplify add hosting
+```
+
+> ? Select the plugin module to execute: # Hosting with Amplify Console (Managed hosting with custom domains, Continuous deployment)
+> ? Choose a type: # Manual Deployment
+
+- Publish your app
+
+```bash
+amplify publish
+```

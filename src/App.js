@@ -1,7 +1,8 @@
-// TODO: https://docs.amplify.aws/start/getting-started/auth/q/integration/react#create-login-ui
+// TODO: https://docs.amplify.aws/start/getting-started/hosting/q/integration/react
 // https://docs.amplify.aws/start/getting-started/data-model/q/integration/react#connect-frontend-to-api
 import React, { useEffect, useState } from 'react'
 import { API, graphqlOperation } from 'aws-amplify'
+import { withAuthenticator } from '@aws-amplify/ui-react'
 import { createTodo } from './graphql/mutations'
 import { listTodos } from './graphql/queries'
 
@@ -76,4 +77,4 @@ const styles = {
   button: { backgroundColor: 'black', color: 'white', outline: 'none', fontSize: 18, padding: '12px 0px' }
 }
 
-export default App
+export default withAuthenticator(App)
